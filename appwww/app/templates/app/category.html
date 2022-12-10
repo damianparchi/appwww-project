@@ -8,11 +8,34 @@
         <div class="container my-5">
             <div class="row">
                 <div class = "col-sm-3">
-                    {% for val in nazwa %}
-                        {{val.nazwa}}
-                    {% endfor %}
+                    <div class="list-group">
+                        {% for val in nazwa %}
+                            <a href="{% url 'tytul-kategorii' val.nazwa %}" class="list-group-item list-group-item-action" 
+                            aria-current = "true">{{val.nazwa}}</a>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class = "col-sm-9">
+                    <diw class="row">
+                        {% for val in product %}
+                            <a href="{% url 'product-desc' val.id %}" class="btn">
+                                <div>
+                                    <img src="{{ val.prod_image.url }}" width="300px" height="200px" alt="">
+                                    <div class="fw-bold">
+                                        <img src=""/>
+                                    </div>
+                                    <div class="fw-bold">
+                                        {{val.nazwa}}
+                                    </div>
+                                    <div class="fw-bold text-danger">
+                                        <small class="fw-light text-decoration-line-through">{{val.cena}}</small>
+                                    </div>
+                                
+                                </div>
+                            </a>
+                        
+                        {% endfor %}
+                    </diw>
 
                 </div>
             </div>

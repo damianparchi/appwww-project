@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Kategorie {% endblock title %}
+
+{% block main-content %}
+
+    <div class="container">
+        <div class="row flex justify-content-between">
+            <img src="{{ product.prod_image.url }}" alt="" class="image col-xs-6 col-sm-12 col-lg-12 mt-3 text-sm-center w-50 h-25">
+        </div>
+        <div class="productdesc col-lg-5">
+            <h1 style="font-family: Georgia; font-size: 50px;">{{product.nazwa}}</h1>
+            <h5>{{product.cena}}zł</h5>
+            <br><h3>Opis produktu</h3>
+            <h1>Opis produktu {{ product }}</h1>
+            <ul class="fs-5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <li>{{product.desc}}</li>
+            </ul>
+            <div class="buttons row flex">
+                <button type="submit" class="d-grid gap-2 btn1 btn btn-danger p-1 m-2 btn-lg text-decoration-none text-white">Dodaj do koszyka</button>
+                <div class="btn btn-dark p-5 m-2 btn-lg"><a href="#" class="text-decoration-none text-white">Kup teraz!</a></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock main-content%}
