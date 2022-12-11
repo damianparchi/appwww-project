@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View
 from . models import Product
 from django.db.models import Count
+from . forms import UserRegisterForm
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -29,3 +31,18 @@ class ProductDesc(View):
     def get(self, request, pk):
         product = Product.objects.get(pk = pk)
         return render(request, "app/productdesc.html", locals())
+
+class RegistrationView(View):
+    def get(self, request):
+        form = UserRegisterForm()
+        return render(request, 'app/registerform.html', locals())
+    def post(self,request):
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Rejestracja przebiegła pomyślnie! Możesz się zalogować.")
+        else:
+            messages.warning(request, "Złe dane.")
+        return render(request, "app/registerform.html", locals())
+
+
