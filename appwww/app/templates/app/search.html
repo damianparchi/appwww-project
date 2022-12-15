@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Wyszukaj {% endblock title %}
+
+{% block main-content %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row">
+                {% for item in prod %}
+                    <div class="col-sm-4 text-center mb-4 hover-shadow">
+                        <a href="{% url 'product-desc' item.id %}" class="btn">
+                            <div>
+                                <img src="{{item.prod_image.url}}" width="300px" height="200px" alt="">
+                                <div class="fw-bold">{{item.nazwa}}</div>
+                                <div><small  class="fw-light text-decoration-line-through">{{item.cena}}zł</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main-content %}

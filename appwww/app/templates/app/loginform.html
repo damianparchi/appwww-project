@@ -15,7 +15,7 @@
                 {% for fm in form %}
                     {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
                 {% endfor %}
-                <small><a href="#">Zapomniales hasła?</a></small>
+                <small><a href="{% url 'password_reset' %}">Zapomniales hasła?</a></small>
                 <input type="submit" value="Login" class="btn btn-primary mt-4">
                 <div class="text-center text-primary fw-bold">
                     <small><a href="{% url 'userregister' %}" class="text-danger">Zarejestruj się!</a></small>

@@ -1,0 +1,76 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Koszyk {% endblock title %}
+
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        {% if basket %}
+        <h1 class="text-center mb-5">
+            Koszyk
+        </h1>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Koszyk</h1>
+                    {% for item in basket %}
+                        <div class="row">
+                            <div class="col-sm-3 text-center align-self-center">
+                                <img src="{{item.product.prod_image.url}}" alt="" class="img-fluid img-thumbnail shadow-sm" height="200" width="200">
+                            </div>
+                            <div class="col-sm-9">
+                                <div>
+                                    <h3>{{item.product.nazwa}}</h3>
+                                    <p class="mb-2 text-muted small">
+                                        {{item.product.desc}}
+                                    </p>
+                                    <div class="my-3">
+                                        <label for="amount">Ilość:</label>
+                                        <a pid={{item.product.id}} class="minus-basket btn"><i class="fas fa-minus-square fa-lg"></i></i></a>
+                                        <span id="amount">{{item.amount}}</span>
+                                        <a pid={{item.product.id}} class="plus-basket btn"><i class="fas fa-plus-square fa-lg"></i></a>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="#" pid={{item.product.id}} class="remove-basket btn btn-sm btn-secondary mr-3">Usuń z koszyka</a>
+                                        
+                                        <p class="mb-0"><span><strong>{{item.product.cena}}zł</strong></span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Całość</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-8 px-0 pb-0">Cena produktów<span id="ile">{{il}}zł</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">Cena dostawy<span>10zł</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-8 px-0 mb-3">
+                            <div>
+                                <strong>Całość do zapłaty: <small>(z dostawą)</small><strong>
+                            </div> 
+                            <span id="totalcost">{{total}}zł</span>
+                        </li>
+                    </ul>
+                    <div class="d-grid"><a href="{% url 'checkout' %}" class="btn btn-primary">Złóż zamówienie</a></div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <h1 class="text-center mb-5">Koszyk jest pusty.</h1>
+        {% endif %}
+    </div>
+</div>
+
+{%endblock main-content%}
+
+

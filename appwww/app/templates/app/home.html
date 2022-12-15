@@ -21,9 +21,10 @@
 {% endblock background-change %}
 
 {% block info %}
+<h1 style="text-align: center; margin-top: 25px; margin-bottom: 25px;">Witaj w świecie Fast Food!</h1>
 <div class = "container">
-  <div class = "row bg-success text-center p-5 text-white border-bottom shadow">
-    <h1>Jedzenie</h1>
+  <div class = "row bg-warning text-center p-5 text-white border-bottom shadow">
+    <h1>Zamów online!</h1>
     <small class = "fs-5"> 
       Znajdujemy się w Olsztynie i z przyjemnością 
       przyjmiemy Twoje zamówienie online.
@@ -40,14 +41,14 @@
 
 {% block main-content %}
   <div class = "container">
-    <h2 class="text-center">Fast Food</h2><br><br>
+    <h2 class="text-center">Menu</h2><br><br>
     <div class="row container">
 
       <div class = "col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"; style="animation-duration: 1s; animation-delay:0.6s; animation-name:none;">
         <div class="homefood burger smbg">
           <a href = "{% url 'kategorie' 'BUR' %}">
             <div class = "homefood text-center">
-              <img src="{% static 'app/images/food/burger.jpg' %}" class="img-responsive center-block" alt="">
+              <img style="width: 250px; height: 250px;" src="{% static 'app/images/food/burger.jpg' %}" class="img-responsive center-block" alt="">
               <p class = "foodpro"> Burger </p>
             </div>
           </a>
@@ -55,10 +56,10 @@
       </div>
 
       <div class = "col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"; style="animation-duration: 1s; animation-delay:0.6s; animation-name:none;">
-        <div class="homefood kebab smbg">
+        <div class="homefood burger smbg">
           <a href = "{% url 'kategorie' 'KEB' %}">
             <div class = "homefood text-center">
-              <img src="{% static 'app/images/food/kebab.jpg' %}" class="img-responsive center-block" alt="">
+              <img style="width: 250px; height: 250px;" src="{% static 'app/images/food/kebab.jpg' %}" class="img-responsive center-block" alt="">
               <p class = "foodpro"> Kebab </p>
             </div>
           </a>
@@ -66,10 +67,10 @@
       </div>
 
       <div class = "col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"; style="animation-duration: 1s; animation-delay:0.6s; animation-name:none;">
-        <div class="homefood pizza smbg">
+        <div class="homefood burger smbg">
           <a href = "{% url 'kategorie' 'PIZ' %}">
             <div class = "homefood text-center">
-              <img src="{% static 'app/images/food/pizza.jpg' %}" class="img-responsive center-block" alt="">
+              <img style="width: 250px; height: 250px;" src="{% static 'app/images/food/pizza.jpg' %}" class="img-responsive center-block" alt="">
               <p class = "foodpro"> Pizza </p>
             </div>
           </a>
@@ -86,7 +87,7 @@
         <div class="homefood burger smbg">
           <a href = "{% url 'kategorie' 'WIN' %}">
             <div class = "homefood text-center">
-              <img src="{% static 'app/images/food/chickenwings.jpg' %}" class="img-responsive center-block" alt="">
+              <img style="width: 250px; height: 250px;"src="{% static 'app/images/food/chickenwings.jpg' %}" class="img-responsive center-block" alt="">
               <p class = "foodpro"> Skrzydełka z kurczaka </p>
             </div>
           </a>
@@ -94,10 +95,10 @@
       </div>
 
       <div class = "col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"; style="animation-duration: 1s; animation-delay:0.6s; animation-name:none;">
-        <div class="homefood kebab smbg">
+        <div class="homefood burger smbg">
           <a href = "{% url 'kategorie' 'ONI' %}">
             <div class = "homefood text-center">
-              <img src="{% static 'app/images/food/onionrings.jpg' %}" class="img-responsive center-block" alt="">
+              <img style="width: 250px; height: 250px;" src="{% static 'app/images/food/onionrings.jpg' %}" class="img-responsive center-block" alt="">
               <p class = "foodpro"> Krążki cebulowe </p>
             </div>
           </a>
@@ -105,10 +106,10 @@
       </div>
 
       <div class = "col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"; style="animation-duration: 1s; animation-delay:0.6s; animation-name:none;">
-        <div class="homefood pizza smbg">
+        <div class="homefood burger smbg">
           <a href = "{% url 'kategorie' 'SUS' %}">
             <div class = "homefood text-center">
-              <img src="{% static 'app/images/food/sushi.jpg' %}" class="img-responsive center-block" alt="">
+              <img style="width: 250px; height: 250px;" src="{% static 'app/images/food/sushi.jpg' %}" class="img-responsive center-block" alt="">
               <p class = "foodpro"> Sushi </p>
             </div>
           </a>
@@ -116,6 +117,5 @@
       </div>
       
     </div>
-    <h1>Witaj w świecie Fast Food!</h1>
   </div><br></br>
 {% endblock main-content %}

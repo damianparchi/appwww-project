@@ -19,9 +19,9 @@
                 </small>
                 <br>
                 {%endfor%}
-                <input type="submit" value="Submit" class="btn btn-primary"> <br>
+                <input type="submit" value="Submit" class="btn text-white btn-warning"> <br>
                 <div class="text-center text-primary fw-bold">
-                    <small>Istnieje uzytkownik ? <a href="{% url 'login' %}" class="text-danger">Zaloguj się</a></small>
+                    <small> <a href="{% url 'login' %}" class="text-danger">Zaloguj się</a></small>
                 </div>
                 {% if form.non_field_errors %}
                     {% for error in form.non_field_errors %}
